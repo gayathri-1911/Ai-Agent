@@ -137,7 +137,13 @@ async def stream_chat_endpoint(request: ChatRequest):
         
         return StreamingResponse(
             error_stream(),
-            media_type="text/event-stream"
+            media_type="text/event-stream",
+            headers={
+                "Cache-Control": "no-cache",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Headers": "*",
+            }
         )
 
 @router.get("/chat/providers")
