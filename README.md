@@ -37,5 +37,4 @@ This repo contains a minimal reference implementation: a backend **LLM Model API
 
 ---
 
-## Architecture
 
